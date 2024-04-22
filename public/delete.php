@@ -2,7 +2,7 @@
 // Process delete operation after confirmation
 if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
     // Include config file
-    require_once "../db/config.php";
+    require_once "db/config.php";
     
     // Prepare a delete statement
     $sql = "DELETE FROM products WHERE product_id = :product_id";
@@ -33,7 +33,7 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
     // Check existence of id parameter
     if(empty(trim($_GET["product_id"]))){
         // URL doesn't contain id parameter. Redirect to error page
-        header("location: ../public/error.php");
+        header("location: public/error.php");
         exit();
     }
 }
